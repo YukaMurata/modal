@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1 ,minimum-scale=1, maximum-scale=1, user-scalable=no">
-	<title>modal</title>
-	<link rel="stylesheet" type="text/css" href="index.css">
-	<link rel="stylesheet" type="text/css" href="reset.css">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1 ,minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>modal</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="reset.css">
 </head>
 <body>
 <div class="overlay modalclose"></div>
 <div class="modal_inner">
-<p class="modal_1">1</p>
-<p class="modal_2">2</p>
-<p class="modal_3">3</p>
+    <p class="modal_1">1</p>
+    <p class="modal_2">2</p>
+    <p class="modal_3">3</p>
 
-<!--modal-->
-<div class="modal" id="modal01">
-    <div class="modal_content">
-    modal
-    <p class="modalclose">Close</p>
+    <!--modal-->
+    <div class="modal" id="modal01">
+        <div class="modal_content">
+            modal
+            <p class="modalclose">Close</p>
+        </div>
+    </div>
+    <div class="modal" id="modal02">
+
+        <!-- モーダルウィンドウが開いている時のオーバーレイ -->
+        <div class="overLay modalclose"></div>
+
+        <!-- モーダルウィンドウの中身 -->
+        <div class="inner">
+            modal
+            <p class="modalclose">Close</p>
+        </div>
+
+    </div>
+    <div class="modal" id="modal03">
+
+        <!-- モーダルウィンドウが開いている時のオーバーレイ -->
+        <div class="overLay modalclose"></div>
+
+        <!-- モーダルウィンドウの中身 -->
+        <div class="inner">
+            modal
+            <p class="modalclose">Close</p>
+        </div>
+
     </div>
 </div>
-<div class="modal" id="modal02">
- 
-    <!-- モーダルウィンドウが開いている時のオーバーレイ -->
-    <div class="overLay modalclose"></div>
- 
-    <!-- モーダルウィンドウの中身 -->
-    <div class="inner">
-    modal
-    <p class="modalclose">Close</p>
-    </div>
- 
-</div>
-<div class="modal" id="modal03">
- 
-    <!-- モーダルウィンドウが開いている時のオーバーレイ -->
-    <div class="overLay modalclose"></div>
- 
-    <!-- モーダルウィンドウの中身 -->
-    <div class="inner">
-    modal
-    <p class="modalclose">Close</p>
-    </div>
- 
-</div>
- </div>
 <script type="text/javascript" src="jquery-3.1.0.min.js"></script>
 <script src="modal.js"></script>
 </body>
