@@ -1,42 +1,36 @@
 $(function () {
+	var modaldata;
 	getdata();
-// // modal open	
-//     $(".modal_1").click(function () {
-//         $("#modal01").velocity("fadeIn", {
-//             duration: 350,
-//             complete: function () {
-//                 $(".overlay").velocity("fudeIn", {
-//                     duration: 350
-//                 });
-//             }
-//         });
-//         return false;
-//     });
-
-// // modal close
-//     $(".modalclose").click(function () {
-//         $("#modal01").velocity("fadeOut", {
-//             duration: 350,
-//             complete: function () {
-//                 $(".overlay").velocity("fadeOut", {
-//                     duration: 350
-//                 });
-//             }
-//         });
-//         $(".overlay").fadeOut();
-//         return false;
-//     });
+	closemodal();
 
 
-function getdata (){
-    $(".button").click(function(){
-       var modaldata = $(this).attr("data-modal");
-       console.log(modaldata);
-    });
-}
+	function getdata (){
+		$('.button').click(function(){
+			modaldata = $(this).attr('data-modal');
+			openmodal(modaldata);
+		});
+	}
 
-function openmodal(){
-	$("")
-}
+	function openmodal (modaldata){
+		$('.modal[data-modal=modaldata], .overlay').velocity('fadeIn',{
+			duration:350,
+			complete: function(){
+
+			}
+		});
+	}
+
+	function closemodal (){
+		$('.modalclose').click(function(){
+			$('.modal[data-modal=modal01], .overlay').velocity('fadeOut',{
+				duration:350,
+				complete:function(){
+
+				}
+			});
+		});
+	}
+
+
 
 });
