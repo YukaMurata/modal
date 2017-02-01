@@ -19,7 +19,6 @@ $(function () {
 			}
 		});
 	}
-
 	function closemodal (){
 		$('.modalclose').click(function(){
 			$('.modal[data-modal=modal01], .overlay').velocity('fadeOut',{
