@@ -11,7 +11,7 @@ $(function () {
 		});
 	}
 
-	function openmodal (modaldata){
+	function openmodal (){
 		$('.modal[data-modal=modal01], .overlay').velocity('fadeIn',{
 			duration:350,
 			complete: function(){
