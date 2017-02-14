@@ -1,34 +1,38 @@
 $(function () {
     var modaldata;
-    getdata();
-    closemodal();
+    var $modal = $('.modal');
+    var $overlay = $('.overlay');
 
 
-    function getdata() {
+
+    function addEvent() {
+        var def = $.Deferred();
         $('.button').click(function () {
             modaldata = $(this).attr('data-modal');
             openmodal(modaldata);
+            def.resolve();
         });
+        return def.promise();
     }
 
     function openmodal() {
-            $('.modal[data-modal="'+ modaldata + '"], .overlay').velocity('fadeIn', {
-                duration: 350,
-                complete: function () {
+        $('.modal[data-modal="'+ modaldata + '"], .overlay').fadeIn();
 
-                }
-            });
     }
 
-    function closemodal() {
-        $('.modalclose').click(function () {
-            $('.modal[data-modal="'+ modaldata + '"], .overlay').velocity('fadeOut', {
-                duration: 350,
-                complete: function () {
-
-                }
-            });
+    function bindEvent() {
+        $modal.add($overlay).add($('.modalclose')).click(function () {
+            $modal.add($overlay).fadeOut();
         });
     }
+
+    function init(){
+        addEvent()
+        .then(function(){
+            bindEvent();
+        });
+    }
+
+    init();
 
 });
