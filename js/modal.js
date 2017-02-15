@@ -23,7 +23,6 @@ $(function () {
         isAnimation = true;
         $('.modal[data-modal="'+ modaldata + '"], .overlay').fadeIn(function(){
             isAnimation = false;
-            console.log(1);
         });
 
     }
