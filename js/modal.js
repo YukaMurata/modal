@@ -26,7 +26,8 @@ $(function () {
 
     function openmodal() {
         isAnimation = true;
-        $('.modal[data-modal="'+ modaldata + '"], .overlay').velocity('fadeIn',{
+        $overlay.velocity('fadeIn');
+        $('.modal[data-modal="'+ modaldata + '"]').velocity('fadeIn',{
             complete:function(){
                isAnimation = false;
            }
