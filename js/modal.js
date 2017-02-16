@@ -8,28 +8,14 @@ $(function () {
 
     function addEvent() {
         $('.button').click(function () {
-
             if(isAnimation){
                 return;
             }
-
             modaldata = $(this).attr('data-modal');
             openmodal(modaldata);
-            
-        });
-    }
-
-    function openmodal() {
-        isAnimation = true;
-        $('.modal[data-modal="'+ modaldata + '"], .overlay').fadeIn(function(){
-            isAnimation = false;
         });
 
-    }
-
-    function bindEvent() {
-        $modal.add($overlay).add($('.modalclose')).click(function () {
-
+        $('.modalclose, .overlay').click(function () {
             if(isAnimation){
                 return;
             }
@@ -38,18 +24,24 @@ $(function () {
         });
     }
 
+    function openmodal() {
+        isAnimation = true;
+        $('.modal[data-modal="'+ modaldata + '"], .overlay').velocity('fadeIn',{
+            complete:function(){
+               isAnimation = false;
+           }
+       });
+    }
+
     function closeModal(){
         isAnimation = true;
-        $modal.add($overlay).fadeOut(function(){
-            isAnimation = false;
-        });
+        $modal.velocity('fadeOut');
+        $overlay.velocity('fadeOut',{
+            complete:function(){
+               isAnimation = false;
+           }
+       });
     }
 
-    function init(){
-        addEvent();
-        bindEvent();
-    }
-
-    init();
-
+    addEvent();
 });

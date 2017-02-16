@@ -41,7 +41,7 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		z-index: 11;
+		z-index: 10;
 		display: none;
 		overflow-y: scroll;
 	}
@@ -68,6 +68,7 @@
 		position: absolute;
 		top: 5%;
 		right: 5%;
+		cursor: pointer;
 
 		&:after{
 			content: '';
