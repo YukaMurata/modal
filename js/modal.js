@@ -15,12 +15,16 @@ $(function () {
             openmodal(modaldata);
         });
 
-        $('.modalclose, .overlay').click(function () {
+        $('.modalclose, .modal').click(function () {
             if(isAnimation){
                 return;
             }
 
             closeModal();
+        });
+
+        $('.modal_content').click(function(e){
+            e.stopPropagation();
         });
     }
 
@@ -29,9 +33,9 @@ $(function () {
         $overlay.velocity('fadeIn');
         $('.modal[data-modal="'+ modaldata + '"]').velocity('fadeIn',{
             complete:function(){
-               isAnimation = false;
-           }
-       });
+             isAnimation = false;
+         }
+     });
     }
 
     function closeModal(){
@@ -39,9 +43,9 @@ $(function () {
         $modal.velocity('fadeOut');
         $overlay.velocity('fadeOut',{
             complete:function(){
-               isAnimation = false;
-           }
-       });
+             isAnimation = false;
+         }
+     });
     }
 
     addEvent();
