@@ -19,7 +19,6 @@ $(function () {
             if(isAnimation){
                 return;
             }
-
             closeModal();
         });
 
