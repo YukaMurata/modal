@@ -12,7 +12,7 @@ $(function () {
                 return;
             }
             modaldata = $(this).attr('data-modal');
-            openmodal(modaldata);
+            openModal(modaldata);
         });
 
         $('.modalclose, .modal').click(function () {
@@ -27,7 +27,7 @@ $(function () {
         });
     }
 
-    function openmodal() {
+    function openModal() {
         isAnimation = true;
         $overlay.velocity('fadeIn');
         $('.modal[data-modal="'+ modaldata + '"]').velocity('fadeIn',{
